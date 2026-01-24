@@ -2,6 +2,11 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import './main.css'
+import {fetchProducts} from "@/services/product.service"
+
+fetchProducts().then((products) => {
+  console.log("product service", products)
+})
 
 import App from './App.vue'
 import router from './router'
