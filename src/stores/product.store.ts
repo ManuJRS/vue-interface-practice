@@ -2,9 +2,11 @@ import {defineStore} from "pinia"
 import {fetchProducts} from "@/services/product.service"
 import ProductModel from "@/domain/product/models/ProductModel"
 
+import type { ProductDto } from "@/domain/product/dto/ProductDto"
+
 export const useProductStore = defineStore("product",{
   state: () => ({
-    products: [] as ProductModel[],
+    productsDto: [] as ProductDto[],
     isLoading: false,
     error: null as string | null,
   }),
@@ -15,8 +17,7 @@ export const useProductStore = defineStore("product",{
       this.error = null
 
       try {
-        const dtos = await fetchProducts()
-        this.products = ProductModel.fromDtos(dtos)
+        this.productsDto = await fetchProducts()
       } catch (e) {
         this.error = e instanceof Error ? e.message: "unknown error"
       } finally {
@@ -26,8 +27,9 @@ export const useProductStore = defineStore("product",{
     }
   },
 
-  getters: {
-    hasProducts: (state) => state.products.length > 0,
-  },
+getters: {
+  products: (state) => ProductModel.fromDtos(state.productsDto),
+  hasProducts: (state) => state.productsDto.length > 0,
+},
   persist:true,
 })
