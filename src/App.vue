@@ -1,11 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView, RouterLink } from 'vue-router';
+
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="p-6">
+    <nav class="mb-6 flex gap-4">
+      <RouterLink to="/products" class="underline">Products</RouterLink>
+    </nav>
+
+    <RouterView />
+  </div>
 </template>
 
 <style scoped></style>

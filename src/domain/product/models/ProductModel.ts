@@ -32,6 +32,10 @@ export default class ProductModel {
     return this.dto.image
   }
 
+  get ratingRate() {
+    return this.dto.rating.rate ?? 0
+  }
+
   get rantingCount() {
     return this.dto.rating?.count ?? 0
   }
