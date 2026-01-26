@@ -1,48 +1,92 @@
-# vue-interfaces
+# 🛍️ Vue Interface Practice
 
-This template should help get you started developing with Vue 3 in Vite.
+Proyecto de práctica enfocado en la construcción de una **interfaz de usuario en Vue 3**, aplicando una arquitectura limpia basada en **DTOs, modelos de dominio, servicios y Pinia**.  
+El objetivo es simular un flujo real de consumo de APIs, similar a una **compra de productos o reserva en línea**.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🎯 Objetivos del proyecto
 
-## Recommended Browser Setup
+- Consumir una API externa (GET / POST)
+- Separar responsabilidades usando:
+  - DTOs
+  - Modelos de dominio
+  - Servicios
+  - Store con Pinia
+- Manejar estado global y persistencia
+- Renderizar datos en la UI usando modelos (no JSON crudo)
+- Simular un flujo real de frontend profesional
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## 📌 Conceptos clave
+- DTOs representan el JSON crudo que llega desde la API.
+- Modelos encapsulan lógica, getters y métodos (ej. formattedPrice()).
+- Servicios se encargan únicamente de consumir la API.
+- Pinia Store maneja estado, loading, errores y persistencia.
+- La UI nunca trabaja con JSON plano, solo con modelos de dominio.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## 🚀 Cómo arrancar el proyecto
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/ManuJRS/vue-interface-practice.git
+cd vue-interface-practice
+```
 
-## Project Setup
-
-```sh
+### 2️⃣ Instalar dependencias
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 3️⃣ Crear el archivo `.env`
+```bash
+cp .env.example .env
+```
+Configura las variables de entorno según sea necesario.
 
-```sh
+### 4️⃣ Levantar el proyecto
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 5️⃣ Abrir en el navegador
+👉 http://localhost:5173/products
 
-```sh
-npm run build
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- Vue 3
+- Vite
+- TypeScript
+- HTML / CSS
+- Node.js
+
+---
+
+## 📁 Estructura del proyecto (resumen)
+
+```
+src/
+├── components/
+├── views/
+├── services/
+├── assets/
+└── main.ts
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
-npm run lint
-```
+## 📌 Notas
+
+- Este proyecto es solo para **práctica y aprendizaje**.
+- Se recomienda usar **Node.js 18+**.
+
+---
+
+## ✨ Autor
+
+**ManuJRS**  
