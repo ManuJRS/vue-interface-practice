@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { RouterView, RouterLink } from 'vue-router';
-
+import { RouterView } from 'vue-router';
+import MainNav from './components/MainNav.vue';
 </script>
 
 <template>
-  <div class="p-6">
-    <nav class="mb-6 flex gap-4">
-      <RouterLink to="/products" class="underline">Products</RouterLink>
-    </nav>
-
-    <RouterView />
-  </div>
+  <MainNav />
+  <RouterView />
 </template>
 
 <style scoped></style>
