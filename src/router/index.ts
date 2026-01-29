@@ -13,11 +13,11 @@ const router = createRouter({
       name: "home",
       component: () => import("@/views/HomeView.vue")
     },
-    //     {
-    //   path: "/",
-    //   name: "home",
-    //   component: () => import("@/views/HomeView.vue")
-    // }
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: () => import("@/views/NotFoundView.vue"),
+    },
   ],
 })
 
