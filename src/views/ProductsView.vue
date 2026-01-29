@@ -17,6 +17,7 @@ onMounted(() => {
 
     <div v-if="productStore.isLoading" class="text-sm">
       Cargando productos...
+
     </div>
 
     <div v-else-if="productStore.error" class="text-sm text-red-600">
