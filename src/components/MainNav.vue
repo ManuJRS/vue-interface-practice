@@ -9,10 +9,13 @@ import { RouterLink } from "vue-router"
         <h1 class="text-lg font-bold">Vue Interface Practice</h1>
       </RouterLink>
 
-      <ul class="flex gap-4 text-sm">
+      <ul class="flex gap-8 text-sm">
         <li>
           <RouterLink to="/products" class="text-gray-600 hover:text-black" active-class="font-semibold text-black">
             Products
+          </RouterLink>
+          <RouterLink to="/about" class="text-gray-600 hover:text-black" active-class="font-semibold text-black">
+            About Us
           </RouterLink>
         </li>
       </ul>
