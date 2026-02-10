@@ -23,6 +23,11 @@ const router = createRouter({
       name: "about-us",
       component: () => import("@/views/AboutView.vue"),
     },
+        {
+      path: "/PlaygroundView",
+      name: "PlaygroundView",
+      component: () => import("@/views/PlaygroundView.vue"),
+    },
   ],
 })
 
